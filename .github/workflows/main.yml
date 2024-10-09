@@ -53,6 +53,6 @@ jobs:
       - name: Install Prettier
         run: npm install --save-dev --save-exact prettier
         working-directory: ./testeaulas
-      - name: Run Prettier
+      - name: Run Prettier on Pages
         run: npx prettier . --write
-        working-directory: ./testeaulas
+        working-directory: ./testeaulas/src/pages
