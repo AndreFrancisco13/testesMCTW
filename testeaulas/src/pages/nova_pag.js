@@ -7,8 +7,8 @@ export default function MinhaPagina() {
       <p>alo</p>
       <p>alo</p>
       <p>alo</p>
-      <p>alo</p>
-      <p>alo</p>
+      <p>alo</p><p>alo</p>
+      
     </div>
   );
 }
