@@ -1,45 +1,59 @@
-name: CI
+# Nome da Pipeline
+name: CI_teste
 
+# Quando a pipeline vai correr. Sempre que houver commit para qualquer branch (push) ou sempre que houver um pull request para qualquer branch
 on:
   push:
     branches:
-      - main 
+      - '**'
   pull_request:
     branches:
-      - main
+      - '**'
 
+# Definição dos jobs que vão correr em paralelo
 jobs:
-  lint:
+  install-dependencies:
+    name: Install Dependencies
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '20' 
+          node-version: '20'
 
+      # Limpar a cache (opcional)
+      - name: Clear npm cache
+        run: npm cache clean --force
+
+      # Instalar todas as dependências
       - name: Install dependencies
         run: npm install
+        working-directory: ./testeaulas
 
-      - name: Run linter
-        run: npm run lint
-
-  test:
+  run-tests:
+    name: Run Tests
     runs-on: ubuntu-latest
-    needs: lint  
+    needs: install-dependencies  # Isto depende de install-dependencies
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'  
+          node-version: '20'
 
-      - name: Install dependencies
-        run: npm install
+      # Instalar Jest
+      - name: Install Jest
+        run: npm install jest
+        working-directory: ./testeaulas
 
+      # Correr todos os testes automáticos
       - name: Run tests
-        run: npm test
+        run: npm test -- -u 
+        working-directory: ./testeaulas
+
+    
