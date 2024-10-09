@@ -53,7 +53,7 @@ jobs:
 
       # Correr todos os testes automáticos
       - name: Run tests
-        run: npm test -- -u 
+        run: npm test
         working-directory: ./testeaulas
 
     
