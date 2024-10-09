@@ -6,7 +6,7 @@ export default function MinhaPagina() {
       <img src="/path-to-your-image.jpg" alt="Descrição da imagem" />
       <p>alo</p>
       <p>alo</p>
-      <p>alo</p>
+      <p>alo</p><p>alo</p><p>alo</p><p>alo</p><p>alo</p>
     </div>
   );
 }
