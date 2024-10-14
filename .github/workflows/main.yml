@@ -56,3 +56,11 @@ jobs:
       - name: Run Prettier on Pages
         run: npx prettier . --write
         working-directory: ./testeaulas/src/pages
+
+  build:
+    runs-on: ubuntu-latest
+    needs: [run-prettier, run-tests]  # Condições para rodar após estes passos
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'  # Corre apenas em main ou master
+    steps:
+      - name: Build Project
+        run: npm run build
