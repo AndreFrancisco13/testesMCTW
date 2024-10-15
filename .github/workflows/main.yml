@@ -68,7 +68,7 @@ jobs:
     steps:
       - name: Build Project
         run: npm run build
-      
+        working-directory: testeaulas
 
   deploy:
     runs-on: ubuntu-latest
