@@ -1,11 +1,11 @@
 name: CI_teste
-'on':
+"on":
   push:
     branches:
-      - '**'
+      - "**"
   pull_request:
     branches:
-      - '**'
+      - "**"
 jobs:
   install-dependencies:
     name: Install Packages
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: "16"
       - name: Clear npm cache
         run: npm cache clean --force
       - name: Install dependencies
@@ -32,7 +32,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: "16"
       - name: Install Jest
         run: npm install jest
         working-directory: ./testeaulas
@@ -49,7 +49,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: "16"
       - name: Install Prettier
         run: npm install --save-dev --save-exact prettier
         working-directory: ./testeaulas
