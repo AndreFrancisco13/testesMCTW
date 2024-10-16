@@ -23,7 +23,7 @@ jobs:
         run: npm cache clean --force
       - name: Install dependencies
         run: npm install
-        working-directory: testeaulas
+        working-directory: /out
   run-tests:
     name: Run Tests
     runs-on: ubuntu-latest
