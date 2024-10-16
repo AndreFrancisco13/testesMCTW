@@ -41,7 +41,8 @@ export default function Home() {
             </li>
             <li>Save and see your changes instantly.</li>
             <li>See some changes</li>
-            <li>See some changes new branch</li>
+            <li>See some changes new branch teste</li>
+            
           </ol>
 
           <div className={styles.ctas}>
