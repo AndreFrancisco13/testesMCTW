@@ -56,3 +56,4 @@ jobs:
       - name: Run Prettier on Pages
         run: npx prettier . --write
         working-directory: ./testeaulas/src/pages
+        
