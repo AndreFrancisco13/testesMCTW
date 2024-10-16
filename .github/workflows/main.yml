@@ -75,4 +75,5 @@ jobs:
     steps:
       - name: Deploy to Netlify
         run: npx netlify-cli deploy --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --prod
-        
+
+        #teste
